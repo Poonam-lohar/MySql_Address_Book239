@@ -188,3 +188,17 @@ mysql> select count(state) from addressbook where state='maharashtra';
 1 row in set (0.00 sec)
 
 *********************************************************************************************************
+
+//UC8: Ability to retrieve entries sorted alphabetically by Person’s name for a given city
+
+mysql> select * from addressbook where city ='kolhapur'order by firstName;
++-----------+----------+---------------+----------+-------------+---------+-------------+---------------------+
+| firstName | lastName | address       | city     | state       | zipCode | phoneNumber | email               |
++-----------+----------+---------------+----------+-------------+---------+-------------+---------------------+
+| Poonam    | lohar    | sambhajiChowk | Kolhapur | maharashtra |  416103 | 9876567867  | poonam98@gmail.com  |
+| Srushti   | mane     | Wadi          | kolhapur | maharashtra |  416103 | 8978678767  | srushti09@gmail.com |
++-----------+----------+---------------+----------+-------------+---------+-------------+---------------------+
+2 rows in set (0.01 sec)
+
+***********************************************************************************************************
+
