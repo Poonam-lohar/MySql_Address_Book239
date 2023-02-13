@@ -40,3 +40,55 @@ mysql> use address_book_service;
 Database changed
 
 *********************************************************************************************
+
+//UC2: Ability to create a Address Book Table with first and last names, address, city,state, zip, phone number and email as its attributes
+
+mysql> create table addressbook(
+    -> firstName varchar(30) not null,
+    -> lastName varchar(30) not null,
+    -> address varchar(100) not null,
+    -> city varchar(25) not null,
+    -> state varchar(30) not null,
+    -> zipCode int not null,
+    -> phoneNumber varchar(20) not null,
+    -> email varchar(50) not null);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc addressbook;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| firstName   | varchar(30)  | NO   |     | NULL    |       |
+| lastName    | varchar(30)  | NO   |     | NULL    |       |
+| address     | varchar(100) | NO   |     | NULL    |       |
+| city        | varchar(25)  | NO   |     | NULL    |       |
+| state       | varchar(30)  | NO   |     | NULL    |       |
+| zipCode     | int          | NO   |     | NULL    |       |
+| phoneNumber | varchar(20)  | NO   |     | NULL    |       |
+| email       | varchar(50)  | NO   |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+************************************************************************************************
+//UC3: Ability to insert new Contacts to AddressBook
+
+mysql> insert into addressbook(firstName,lastName,address,city,state,zipCode,phoneNumber,email)values('Poonam','lohar','shirol','Kolhapur','maharashtra',416103,'9876567867','poonam98@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into addressbook(firstName,lastName,address,city,state,zipCode,phoneNumber,email)values('Reema','desai','savlaj','sangli','maharashtra',416311,'9565456789','reema13@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into addressbook(firstName,lastName,address,city,state,zipCode,phoneNumber,email)values('Srushti','mane','Wadi','kolhapur','maharashtra',416103,'8978678767','srushti09@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from addressbook;
++-----------+----------+---------+----------+-------------+---------+-------------+---------------------+
+| firstName | lastName | address | city     | state       | zipCode | phoneNumber | email               |
++-----------+----------+---------+----------+-------------+---------+-------------+---------------------+
+| Poonam    | lohar    | shirol  | Kolhapur | maharashtra |  416103 | 9876567867  | poonam98@gmail.com  |
+| Reema     | desai    | savlaj  | sangli   | maharashtra |  416311 | 9565456789  | reema13@gmail.com   |
+| Srushti   | mane     | Wadi    | kolhapur | maharashtra |  416103 | 8978678767  | srushti09@gmail.com |
++-----------+----------+---------+----------+-------------+---------+-------------+---------------------+
+3 rows in set (0.00 sec)
+
+*************************************************************************************************
