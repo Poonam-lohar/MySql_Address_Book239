@@ -70,3 +70,25 @@ mysql> desc addressbook;
 8 rows in set (0.01 sec)
 
 ************************************************************************************************
+//UC3: Ability to insert new Contacts to AddressBook
+
+mysql> insert into addressbook(firstName,lastName,address,city,state,zipCode,phoneNumber,email)values('Poonam','lohar','shirol','Kolhapur','maharashtra',416103,'9876567867','poonam98@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into addressbook(firstName,lastName,address,city,state,zipCode,phoneNumber,email)values('Reema','desai','savlaj','sangli','maharashtra',416311,'9565456789','reema13@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into addressbook(firstName,lastName,address,city,state,zipCode,phoneNumber,email)values('Srushti','mane','Wadi','kolhapur','maharashtra',416103,'8978678767','srushti09@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from addressbook;
++-----------+----------+---------+----------+-------------+---------+-------------+---------------------+
+| firstName | lastName | address | city     | state       | zipCode | phoneNumber | email               |
++-----------+----------+---------+----------+-------------+---------+-------------+---------------------+
+| Poonam    | lohar    | shirol  | Kolhapur | maharashtra |  416103 | 9876567867  | poonam98@gmail.com  |
+| Reema     | desai    | savlaj  | sangli   | maharashtra |  416311 | 9565456789  | reema13@gmail.com   |
+| Srushti   | mane     | Wadi    | kolhapur | maharashtra |  416103 | 8978678767  | srushti09@gmail.com |
++-----------+----------+---------+----------+-------------+---------+-------------+---------------------+
+3 rows in set (0.00 sec)
+
+*************************************************************************************************
