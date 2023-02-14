@@ -258,3 +258,49 @@ mysql> select addressbook_type,count(*) from addressbook group by addressbook_ty
 2 rows in set (0.01 sec)
 
 *******************************************************************************************************************
+
+//UC11:  Ability to add person to both Friend and Family
+
+mysql> create table family(id int not null auto_increment, firstName varchar(25), lastName varchar(25), address varchar(50), city varchar(20), state varchar(25), zipCode int not null, phonenumber varchar(250), email varchar(100), addressbook_name varchar(20), addressbook_type varchar(20), primary key(id));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc family;
++------------------+--------------+------+-----+---------+----------------+
+| Field            | Type         | Null | Key | Default | Extra          |
++------------------+--------------+------+-----+---------+----------------+
+| id               | int          | NO   | PRI | NULL    | auto_increment |
+| firstName        | varchar(25)  | YES  |     | NULL    |                |
+| lastName         | varchar(25)  | YES  |     | NULL    |                |
+| address          | varchar(50)  | YES  |     | NULL    |                |
+| city             | varchar(20)  | YES  |     | NULL    |                |
+| state            | varchar(25)  | YES  |     | NULL    |                |
+| zipCode          | int          | NO   |     | NULL    |                |
+| phonenumber      | varchar(250) | YES  |     | NULL    |                |
+| email            | varchar(100) | YES  |     | NULL    |                |
+| addressbook_name | varchar(20)  | YES  |     | NULL    |                |
+| addressbook_type | varchar(20)  | YES  |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+11 rows in set (0.01 sec)
+
+mysql> create table friend(id int not null auto_increment, firstName varchar(25), lastName varchar(25), address varchar(50), city varchar(20), state varchar(25), zipCode int not null, phonenumber varchar(250), email varchar(100), addressbook_name varchar(20), addressbook_type varchar(20), primary key(id));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc friend;
++------------------+--------------+------+-----+---------+----------------+
+| Field            | Type         | Null | Key | Default | Extra          |
++------------------+--------------+------+-----+---------+----------------+
+| id               | int          | NO   | PRI | NULL    | auto_increment |
+| firstName        | varchar(25)  | YES  |     | NULL    |                |
+| lastName         | varchar(25)  | YES  |     | NULL    |                |
+| address          | varchar(50)  | YES  |     | NULL    |                |
+| city             | varchar(20)  | YES  |     | NULL    |                |
+| state            | varchar(25)  | YES  |     | NULL    |                |
+| zipCode          | int          | NO   |     | NULL    |                |
+| phonenumber      | varchar(250) | YES  |     | NULL    |                |
+| email            | varchar(100) | YES  |     | NULL    |                |
+| addressbook_name | varchar(20)  | YES  |     | NULL    |                |
+| addressbook_type | varchar(20)  | YES  |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+11 rows in set (0.00 sec)
+
+************************************************************************************************************
